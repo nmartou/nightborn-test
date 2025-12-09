@@ -14,15 +14,39 @@ export default function Page({params}: { params: Promise<{ id_todo: string }> })
         setTodo(data || null);
     }, [params])
 
+    const changeStatus = () => {
+        setTodo((prev) => {
+            if (!prev) return prev;
+            return { ...prev, completed: !prev.completed };
+        })
+    }
+
+    const changeDescription = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
+        e.preventDefault();
+        const newDescription = e.target.value;
+        setTodo((prev) => {
+            if (!prev) return prev;
+            return { ...prev, description: newDescription };
+        })
+    }
+
+    const changeTitle = (e: React.ChangeEvent<HTMLInputElement>) => {
+        e.preventDefault();
+        const newTitle = e.target.value;
+        setTodo((prev) => {
+            if (!prev) return prev;
+            return { ...prev, title: newTitle };
+        })
+    }
+
     return(
         <section className="max-w-3xl m-auto border border-gray-500 rounded-lg p-5 mt-20">
-            <h1 className="text-2xl mb-5 m-auto w-fit">{todo?.title}</h1>
-            <Status completed={todo?.completed || false} className="m-auto w-fit" />
+            <input type="text" className="text-2xl mb-5 m-auto w-fit" value={todo?.title} onChange={changeTitle} />
+            <Status completed={todo?.completed || false} className="m-auto w-fit cursor-pointer" changeStatus={changeStatus} />
             <textarea
                 value={todo?.description || ""}
-                className="border rounded-sm w-full mt-5">
-
-            </textarea>
+                className="border rounded-sm w-full mt-5"
+                onChange={changeDescription}></textarea>
             <div className="flex align-middle justify-space-between">
                 <time className="text-gray-600 text-[0.85em]">Created at: {todo?.created_at}</time>
                 <div className="flex gap-3 ml-auto">
