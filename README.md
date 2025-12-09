@@ -1,6 +1,8 @@
 # nightborn-test project
 
-Simple TO DO app
+Simple TO DO app.
+
+Version after 2 hours of work on `main` branch, and last version on `dev` branch.
 
 ## How to start
 
