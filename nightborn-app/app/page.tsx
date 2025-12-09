@@ -7,7 +7,7 @@ const queryClient = new QueryClient();
 
 export default function Home() {
   return (
-    <div className="">
+    <div>
       <main>
         <QueryClientProvider client={queryClient}>
           <TodoList />
