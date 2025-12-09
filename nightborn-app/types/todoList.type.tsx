@@ -1,11 +1,11 @@
-export type itemProps = {
+export type ItemProps = {
     id: number;
     title: string;
     completed: boolean;
     created_at: string;
 }
 
-export type todoItem = {
+export type TodoItem = {
     id: number;
     description?: string;
     title: string;
