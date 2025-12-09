@@ -9,7 +9,7 @@ export default function TodoList() {
             <h1 className="font-bold text-3xl my-20 w-fit m-auto">To do list - Nightborn</h1>
             {file.data.map((item) => {
                 return (
-                    <TodoItem key={item.id} title={item.title} completed={item.completed} date={item.created_at} />
+                    <TodoItem key={item.id} data={item} />
                 )
             })}
         </section>
