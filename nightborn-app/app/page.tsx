@@ -1,3 +1,5 @@
+"use client"
+
 import TodoList from "@/components/todo/todoList";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
