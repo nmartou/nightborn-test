@@ -1,8 +1,8 @@
 "use client";
 
-export default function Status(props: { completed: boolean }) {
+export default function Status(props: { completed: boolean, className?: string }) {
     return(
-        <div>
+        <div className={props.className}>
             {props.completed ? (
                 <span className="text-green-600 font-bold rounded-lg bg-green-200 p-3">Completed</span>
             ) : (
