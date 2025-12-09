@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import Status from "./status";
-import { ItemProps } from '@/types/todoList.type'
+import type { ItemProps } from '@/types/todoList.type'
 
 export default function TodoItem(props: {data: ItemProps}) {
     const { id, title, completed, created_at } = props.data;
