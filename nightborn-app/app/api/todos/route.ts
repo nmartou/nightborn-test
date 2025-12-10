@@ -18,7 +18,7 @@ export async function GET(req: Request): Promise<NextResponse> {
     return NextResponse.json({status: 200, data: file});
 }
 
-// Create a new todo
+// Create a new todo - TODO
 export async function POST(request: Request): Promise<NextResponse> {
     return NextResponse.json({ status: 201, message: "POST request received" });
 }

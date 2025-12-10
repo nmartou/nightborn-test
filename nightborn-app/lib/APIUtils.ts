@@ -1,6 +1,7 @@
 "use server";
 
 import type { TodoItem as TodoItemType } from "@/types/todoList.type";
+import file from "@/app/data.json"
 
 // sorting by creation date or alphabetical
 export async function sortData(data: TodoItemType[], type: "date" | "alpha", ascending: boolean = true) {
@@ -22,4 +23,18 @@ export async function sortData(data: TodoItemType[], type: "date" | "alpha", asc
                 : titleB.localeCompare(titleA);
         });
     }
+}
+
+// TODO
+export async function createTodo(todo: Omit<TodoItemType, "id">) {
+    const nextId = Math.max(...file.data.map(t => t.id)) + 1;
+
+    const newTodo: TodoItemType = {
+        id: nextId,
+        ...todo,
+    };
+
+    // return {
+    //     data: [...json.data, todo],
+    // };
 }
