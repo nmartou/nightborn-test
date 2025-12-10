@@ -25,3 +25,13 @@ npm run build
 ```
 
 You can access to the main version [here](nightborn-test-git-main-nmartous-projects.vercel.app)
+
+## Decisions
+
+I wanted to start with the visual first pages (home page and detailed page) and have at least one element of each topic from required elements. I started to split all the possible components to use them with the easiest way.
+
+## What to improve with more time
+
+- Have a complete functinnal API
+- Have a better Responsive design for small devices
+- Add a creation modal for new todo
