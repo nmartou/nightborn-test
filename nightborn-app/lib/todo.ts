@@ -15,3 +15,11 @@ export async function changeTodoValue(id: string): Promise<void> {
         console.log(data);
     });
 }
+
+export async function getSortedTodos(type: "date" | "alpha", asc: boolean): Promise<TodoItem[]> {
+    const res = await fetch("/api/todos?sort=" + type + '&asc=' + asc);
+    if(res.status !== 200) console.error("Data failed to fetch");
+    const json =  await res.json();
+    console.log(json.data)
+    return json.data;
+}
