@@ -5,7 +5,7 @@ import file from "@/app/data.json";
 import { sortData } from "@/lib/APIUtils";
 
 // Fetch specific todo - TODO
-export async function GET(req: Request, { params } : {params: {id: string}}): Promise<NextResponse> {
+export async function GET(req: Request, { params } : {params: Promise<{id: string}>}): Promise<NextResponse> {
     const {id} = await params;
     const idNumber = Number(id);
     if(!idNumber || idNumber === null) return NextResponse.json({ status: 404, message: "Id not found" });
